@@ -3,7 +3,7 @@ import axios from "axios";
 const addRecycle = async (product, creditPoints, location, user) => {
 	try {
 		const response = await axios.post(
-			"http://localhost:5000/api/recycle/add",
+			`${process.env.REACT_APP_SERVER_HOST}/api/recycle/add`,
 			{ product, creditPoints, location, user },
 			{
 				headers: { Accept: "*/*" },
@@ -21,7 +21,7 @@ const addRecycle = async (product, creditPoints, location, user) => {
 const fetchAllRecycles = async (userId) => {
 	try {
 		const response = await axios.get(
-			`http://localhost:5000/api/recycle/fetchall/${userId}`,
+			`${process.env.REACT_APP_SERVER_HOST}/api/recycle/fetchall/${userId}`,
 			{
 				headers: { Accept: "*/*" },
 			}
@@ -38,7 +38,7 @@ const fetchAllRecycles = async (userId) => {
 const fetchOneRecycle = async (recycleId) => {
 	try {
 		const response = await axios.get(
-			`http://localhost:5000/api/recycle/fetchone/${recycleId}`,
+			`${process.env.REACT_APP_SERVER_HOST}/api/recycle/fetchone/${recycleId}`,
 			{
 				headers: { Accept: "*/*" },
 			}
@@ -55,7 +55,7 @@ const fetchOneRecycle = async (recycleId) => {
 const deleteRecycle = async (recycleId) => {
 	try {
 		const response = await axios.delete(
-			`http://localhost:5000/api/recycle/delete/${recycleId}`,
+			`${process.env.REACT_APP_SERVER_HOST}/api/recycle/delete/${recycleId}`,
 			{
 				headers: { Accept: "*/*" },
 			}

@@ -31,8 +31,7 @@ const State = (props) => {
 
 	// ALgorith for Location fetching
 	const ReverseGeocodeaddress = async (lat, log) => {
-		mapboxgl.accessToken =
-			"pk.eyJ1IjoibmlzaGFudDc0MTIiLCJhIjoiY2xtYm42NHI5MWN0ZTNkbzVsdzhkNnl0bSJ9.FXHqQifsNwqwWW3g4qEZgw";
+		mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 		// Construct the API URL with separate lat and lon parameters
 		const geocodingApiUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${log},${lat}.json?access_token=${mapboxgl.accessToken}`;
