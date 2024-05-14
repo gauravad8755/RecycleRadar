@@ -14,9 +14,14 @@ const Contact = () => {
 
 		setTimeout(() => {
 			emailjs
-				.sendForm("YOUR_SERVICE_KEY", "YOUR_TEMPLATE_KEY", form.current, {
-					publicKey: "YOUR_PUBLIC_KEY",
-				})
+				.sendForm(
+					import.meta.env.VITE_EMAILJS_SERVICE_KEY,
+					import.meta.env.VITE_EMAILJS_TEMPLATE_KEY,
+					form.current,
+					{
+						publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+					}
+				)
 				.then(
 					() => alert("The message has been sent successfully!"),
 					() => alert("Failed to send the message!")
