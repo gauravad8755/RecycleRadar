@@ -11,6 +11,12 @@ const chatbotQuestions = {
 		"I'm just a chatbot, I'm here to help you with any questions you have!",
 	"who are you":
 		"I'm just a chatbot, I'm here to help you with any questions you have!",
+	"what is ewaste":
+		"E-waste is discarded electronic devices like computers, smartphones, and TVs. It poses environmental and health risks due to toxic materials but also contains valuable recyclable metals. Proper disposal and recycling are essential.",
+	"what is recycling":
+		"Recycling is the process of converting waste materials into new products to reduce resource consumption and environmental impact.",
+	"what is pollution":
+		"Pollution is the contamination of the environment by harmful substances, affecting air, water, and soil quality and posing health risks.",
 	"what can i recycle":
 		"You can recycle electronic devices such as smartphones, laptops, tablets, desktop computers, monitors, TVs, and other electronic gadgets.",
 	"where can i recycle my ewaste":
