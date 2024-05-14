@@ -23,7 +23,7 @@ const getStateFromLatLng = async (lat, lng) => {
 const getEWasteCenters = async (state) => {
 	try {
 		const response = await axios.get(
-			`https://api.allorigins.win/get?url=https://ewfl-backend-hemant2335.vercel.app/ewaste/${state
+			`https://api.allorigins.win/get?url=https://thingproxy.freeboard.io/fetch/https://ewfl-backend-hemant2335.vercel.app/ewaste/${state
 				.toLowerCase()
 				.replaceAll(" ", "")}`,
 			{ headers: { Accept: "*/*", "X-Requested-With": "XMLHttpRequest" } }
