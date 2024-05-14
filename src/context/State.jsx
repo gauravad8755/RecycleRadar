@@ -81,7 +81,7 @@ const State = (props) => {
 	const fetchcitystate = async () => {
 		setisLoading(true);
 		const res = await fetch(
-			"https://thingproxy.freeboard.io/fetch/https://ewfl-backend-hemant2335.vercel.app/ewaste"
+			"https://api.allorigins.win/raw?url=https://ewfl-backend-hemant2335.vercel.app/ewaste"
 		);
 		const data = await res.json();
 		setfacdata(data);
@@ -92,7 +92,7 @@ const State = (props) => {
 		setisLoading(true);
 		const sendstate = await Locationstate?.replace(/\s/g, "").toLowerCase();
 		const res = await fetch(
-			`https://thingproxy.freeboard.io/fetch/https://ewfl-backend-hemant2335.vercel.app/ewaste/${
+			`https://api.allorigins.win/raw?url=https://ewfl-backend-hemant2335.vercel.app/ewaste/${
 				sendstate ? sendstate : "haryana"
 			}`
 		);
