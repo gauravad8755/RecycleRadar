@@ -13,8 +13,15 @@ const State = (props) => {
 	const [facdata, setfacdata] = useState([]);
 	const [fetcheddata, setfetcheddata] = useState([]);
 
-	const updateUserCreditPoints = async (creditPoints) => {
-		const updatedUser = await updateCreditPoints(User._id, creditPoints);
+	const increaseUserCreditPoints = async (creditPoints) => {
+		const newCreditPoints = User.creditPoints + creditPoints;
+		const updatedUser = await updateCreditPoints(User._id, newCreditPoints);
+		setUser(updatedUser);
+	};
+
+	const reduceUserCreditPoints = async (creditPoints) => {
+		const newCreditPoints = User.creditPoints - creditPoints;
+		const updatedUser = await updateCreditPoints(User._id, newCreditPoints);
 		setUser(updatedUser);
 	};
 
@@ -31,7 +38,7 @@ const State = (props) => {
 
 	// ALgorith for Location fetching
 	const ReverseGeocodeaddress = async (lat, log) => {
-		mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+		mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 		// Construct the API URL with separate lat and lon parameters
 		const geocodingApiUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${log},${lat}.json?access_token=${mapboxgl.accessToken}`;
@@ -115,7 +122,8 @@ const State = (props) => {
 	return (
 		<Context.Provider
 			value={{
-				updateUserCreditPoints,
+				increaseUserCreditPoints,
+				reduceUserCreditPoints,
 				facdata,
 				fetcheddata,
 				Locationstate,

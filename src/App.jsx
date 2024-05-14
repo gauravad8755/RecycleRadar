@@ -6,6 +6,7 @@ import State from "./context/State";
 import NewRecycle from "./Pages/NewRecycle";
 import Recycle from "./Pages/Recycle";
 import Chatbot from "./Components/Chatbot";
+import Store from "./Pages/Store";
 
 const App = () => {
 	return (
@@ -28,6 +29,7 @@ const App = () => {
 						<Route exact path="/recyclequeues" element={<RecycleQueues />} />
 						<Route exact path="/recycle/:recycleId" element={<Recycle />} />
 						<Route exact path="/profile" element={<Profile />} />
+						<Route exact path="/store" element={<Store />} />
 					</Routes>
 					<Footer />
 					<Chatbot />

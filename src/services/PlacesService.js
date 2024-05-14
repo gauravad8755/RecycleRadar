@@ -6,7 +6,7 @@ const getStateFromLatLng = async (lat, lng) => {
 			`https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json`,
 			{
 				params: {
-					access_token: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN,
+					access_token: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN,
 				},
 				headers: { Accept: "*/*" },
 			}
@@ -44,7 +44,7 @@ const getLatLngFromAddress = async (address) => {
 			}.json`,
 			{
 				params: {
-					access_token: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN,
+					access_token: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN,
 				},
 				headers: { Accept: "*/*" },
 			}

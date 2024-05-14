@@ -12,11 +12,11 @@ import { useEffect } from "react";
 const Recycle = () => {
 	const { recycleId } = useParams();
 	const [recycle, setRecycle] = useState(null);
-	const { updateUserCreditPoints } = useContext(Context);
+	const { increaseUserCreditPoints } = useContext(Context);
 	const navigate = useNavigate();
 
 	const handleRecycled = async () => {
-		await updateUserCreditPoints(recycle.creditPoints);
+		await increaseUserCreditPoints(recycle.creditPoints);
 		await deleteRecycle(recycle._id);
 		navigate("/recyclequeues");
 	};

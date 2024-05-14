@@ -3,7 +3,7 @@ import axios from "axios";
 const loginUser = async (email, password) => {
 	try {
 		const response = await axios.post(
-			`${process.env.REACT_APP_SERVER_HOST}/api/auth/login`,
+			`${import.meta.env.VITE_SERVER_HOST}/api/auth/login`,
 			{ email, password },
 			{
 				headers: { Accept: "*/*" },
@@ -21,7 +21,7 @@ const loginUser = async (email, password) => {
 const loginUserWithId = async (userId) => {
 	try {
 		const response = await axios.get(
-			`${process.env.REACT_APP_SERVER_HOST}/api/auth/loginwithid/${userId}`,
+			`${import.meta.env.VITE_SERVER_HOST}/api/auth/loginwithid/${userId}`,
 			{
 				headers: { Accept: "*/*" },
 			}
@@ -38,7 +38,7 @@ const loginUserWithId = async (userId) => {
 const createUser = async (name, email, phone, password) => {
 	try {
 		const response = await axios.post(
-			`${process.env.REACT_APP_SERVER_HOST}/api/auth/createuser`,
+			`${import.meta.env.VITE_SERVER_HOST}/api/auth/createuser`,
 			{ name, email, phone, password },
 			{
 				headers: { Accept: "*/*" },
@@ -56,7 +56,9 @@ const createUser = async (name, email, phone, password) => {
 const updateCreditPoints = async (usedId, creditPoints) => {
 	try {
 		const response = await axios.put(
-			`${process.env.REACT_APP_SERVER_HOST}/api/auth/updatecreditpoints/${usedId}`,
+			`${
+				import.meta.env.VITE_SERVER_HOST
+			}/api/auth/updatecreditpoints/${usedId}`,
 			{ creditPoints },
 			{
 				headers: { Accept: "*/*" },

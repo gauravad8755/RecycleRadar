@@ -105,10 +105,19 @@ const Navbar = () => {
 								<Tooltip anchorSelect="#profile" place="bottom">
 									Profile
 								</Tooltip>
-								<div className="flex w-fit h-fit justify-center items-center p-2 rounded-lg border-2 gap-1">
+								<button
+									id="creditPoints"
+									className="flex w-fit h-fit justify-center items-center p-2 rounded-lg border-2 gap-1"
+									onClick={() => {
+										navigate("/store");
+									}}
+								>
 									<h1>{User?.creditPoints}</h1>
 									<BiCoinStack />
-								</div>
+								</button>
+								<Tooltip anchorSelect="#creditPoints" place="bottom">
+									Store
+								</Tooltip>
 							</div>
 						)}
 					</div>

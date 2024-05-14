@@ -15,7 +15,7 @@ const SearchMap = () => {
 
 	// Create a function to initialize the map
 	const initializeMap = (coordinates1) => {
-		mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+		mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 		const map = new mapboxgl.Map({
 			container: "map", // Use the provided coordinates as the initial center
@@ -28,7 +28,7 @@ const SearchMap = () => {
 	};
 
 	const Geocodeaddress = async (address) => {
-		mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+		mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 		const geocodingApiUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${mapboxgl.accessToken}`;
 		const response = await fetch(geocodingApiUrl);
 		const data = await response.json();
