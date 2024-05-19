@@ -30,12 +30,38 @@ const Chatbot = () => {
 			.trim()
 			.replace(/\s+/g, " ")
 			.replace(/[^\a-z\s]/gi, "");
-		const AIMessage =
-			chatbotQuestions[
-				Object.keys(chatbotQuestions).includes(modifiedUserMessage)
-					? modifiedUserMessage
-					: "default"
-			];
+
+		let AIMessage;
+		if (Object.keys(chatbotQuestions).includes(modifiedUserMessage)) {
+			AIMessage = chatbotQuestions[modifiedUserMessage];
+		} else if (modifiedUserMessage.includes("redeem")) {
+			AIMessage =
+				"To redeem your points, visit our Store page. Choose the items you want and click on the 'Get Code' button to complete your redemption.";
+		} else if (modifiedUserMessage.includes("recycle")) {
+			AIMessage =
+				"To recycle your e-waste, search for nearby centers using our website. Drop off your items at the selected center and earn points for recycling.";
+		} else if (modifiedUserMessage.includes("point")) {
+			AIMessage =
+				"Earn points by recycling your e-waste at designated centers. Accumulate points and use them to redeem exciting items from our Store page.";
+		} else if (modifiedUserMessage.includes("center")) {
+			AIMessage =
+				"Find e-waste recycling centers near you in our Facilities page. Simply allow your location permission to see a list of nearby centers.";
+		} else if (modifiedUserMessage.includes("store")) {
+			AIMessage =
+				"Visit our Store page to browse items available for redemption. Use your points to get the items you like by clicking on the 'Get Code' button.";
+		} else if (modifiedUserMessage.includes("credit")) {
+			AIMessage =
+				"Earn credit points by recycling your e-waste at local centers. Use these credits to redeem various items from our Store page.";
+		} else if (modifiedUserMessage.includes("reward")) {
+			AIMessage =
+				"Recycle your e-waste and earn points to redeem exciting rewards from our Store page. The more you recycle, the more you can redeem!";
+		} else if (modifiedUserMessage.includes("ewaste")) {
+			AIMessage =
+				"E-waste refers to discarded electronic devices like phones, computers, and appliances. Use our website to find nearby recycling centers where you can safely dispose of your e-waste and earn points for doing so.";
+		} else {
+			AIMessage = chatbotQuestions["default"];
+		}
+
 		setMessage("");
 		setTimeout(() => {
 			setChatMessages((prevMessages) => [

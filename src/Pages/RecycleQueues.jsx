@@ -24,7 +24,9 @@ const RecycleQueues = () => {
 				Your Recycle Queues
 			</h1>
 			{recycles.length <= 0 ? (
-				<p className="fs-5 text-center text-secondary">No recycle in queue!</p>
+				<p className="fs-5 text-center text-secondary mb-60">
+					No recycle in queue!
+				</p>
 			) : (
 				<div className="w-full flex flex-col gap-[5vh]">
 					{recycles?.map((recycle) => {

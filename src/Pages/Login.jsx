@@ -41,6 +41,8 @@ const Login = () => {
 				navigate("/profile");
 			} catch (error) {
 				alert("Internal Server Error");
+			} finally {
+				setloading(false);
 			}
 		}
 	};
@@ -56,8 +58,9 @@ const Login = () => {
 				alert("User Created Successfully");
 				setIsLoginPage(true);
 			} catch (error) {
-				setloading(false);
 				alert("Email already exists");
+			} finally {
+				setloading(false);
 			}
 		}
 	};
